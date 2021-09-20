@@ -1,15 +1,15 @@
 import Head from 'next/head'
 import Client from '../src/apollo/client'
+import Layout from '../src/components/layout';
 import { GET_MENUS } from '../src/queries/get-menus'
 
 
-export default function Home( {menus} ) {
-  console.log('my menus', menus);
+export default function Home({ data }) {
+  
   return (
-    <div>
-      hello world
-    
-    </div>
+    <Layout data={data} >
+      content
+    </Layout>
   )
 }
 
@@ -25,9 +25,11 @@ export async function getStaticProps(){
 
   return {
     props: {
-      menus: {
-        headerMenus: data?.headerMenus?.edges,
-        footerMenus: data?.footerMenus?.edges,
+      data: {
+        menus: {
+          headerMenus: data?.headerMenus?.edges,
+          footerMenus: data?.footerMenus?.edges,
+        }
       }
       
     },
