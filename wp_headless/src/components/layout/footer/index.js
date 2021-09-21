@@ -45,7 +45,7 @@ const Footer = ({ footer, footerMenus }) => {
                     { ! isEmpty( footer?.socialLinks ) && isArray( footer?.socialLinks ) ? (
                         <ul className="flex items-center">
                             { footer.socialLinks.map( socialLink => (
-                                <li key={ socialLink?.iconName } className="ml-2" >
+                                <li key={ socialLink?.iconName } className="ml-4" >
                                     <a href={socialLink?.iconUrl}>
                                         { getIconComponentsByName( socialLink?.iconName ) }
                                     </a>
