@@ -3,7 +3,7 @@ import Footer from "./footer";
 import head from 'next/head';
 
 const Layout = ({children, data}) => {
-    console.log('my data', data);
+    
     return ( 
         <div>
             <head>
