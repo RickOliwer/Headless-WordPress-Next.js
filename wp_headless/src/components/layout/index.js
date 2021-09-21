@@ -4,7 +4,7 @@ const Layout = ({children, data}) => {
     console.log('my data', data);
     return ( 
         <div>
-            <Header headerMenus={data?.menus?.headerMenus} />
+            <Header key="header" headerMenus={data?.menus?.headerMenus} />
             {children}
         </div>
      );

@@ -7,7 +7,7 @@ import { GET_MENUS } from '../src/queries/get-menus'
 export default function Home({ data }) {
   
   return (
-    <Layout data={data} >
+    <Layout key="layout" data={data} >
       content
     </Layout>
   )

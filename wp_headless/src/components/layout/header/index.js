@@ -7,7 +7,7 @@ const Header = ({headerMenus}) => {
     }
     return ( 
         <header>
-            <Nav headerMenus={headerMenus} />
+            <Nav key="nav" headerMenus={headerMenus} />
         </header>
     );
 }
