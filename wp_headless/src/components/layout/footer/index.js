@@ -1,6 +1,7 @@
 import {isEmpty, isArray} from 'lodash';
 import {sanitize} from '../../../utils/miscellaneous';
 import Link from 'next/link'
+import { getIconComponentsByName } from '../../../utils/icons-map';
 const Footer = ({ footer, footerMenus }) => {
 
     return (
@@ -31,6 +32,27 @@ const Footer = ({ footer, footerMenus }) => {
                     ) : null}
                     
 
+                </div>
+
+            </div>
+            <div class="flex mt-8 mb-8 flex-wrap -mx-1 overflow-hidden">
+
+                <div class="my-1 px-1 w-full overflow-hidden xl:w-1/2">
+                    {footer.copyrightText ? footer.copyrightText : ''}
+                </div>
+
+                <div class="my-1 px-1 w-full overflow-hidden xl:w-1/2 flex justify-end">
+                    { ! isEmpty( footer?.socialLinks ) && isArray( footer?.socialLinks ) ? (
+                        <ul className="flex items-center">
+                            { footer.socialLinks.map( socialLink => (
+                                <li key={ socialLink?.iconName } className="ml-2" >
+                                    <a href={socialLink?.iconUrl}>
+                                        { getIconComponentsByName( socialLink?.iconName ) }
+                                    </a>
+                                </li>
+                            ))}
+                        </ul>
+                    ) : null }
                 </div>
 
             </div>
