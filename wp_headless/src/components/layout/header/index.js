@@ -1,13 +1,13 @@
 import  {isEmpty} from 'lodash'
 import Nav from "./nav";
 
-const Header = ({headerMenus}) => {
+const Header = ({header, headerMenus}) => {
     if( isEmpty(headerMenus) ){
         return null;
     }
     return ( 
         <header>
-            <Nav key="nav" headerMenus={headerMenus} />
+            <Nav header={header} headerMenus={headerMenus} />
         </header>
     );
 }

@@ -1,7 +1,8 @@
 import { gql } from '@apollo/client'
 import MenuFragment from './fragments/menus'
 
-const HeaderFooter = `    header: getHeader{
+const HeaderFooter = `
+header: getHeader{
   favicon
   siteLogoUrl
   siteTagLine
